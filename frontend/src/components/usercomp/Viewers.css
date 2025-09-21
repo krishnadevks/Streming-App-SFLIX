@@ -1,0 +1,240 @@
+/* Main container for the movie details */
+.tb-details-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+/* Header styling for the movie details */
+.tb-details-container h2 {
+  margin: 0;
+  font-size: 1.8rem; /* Slightly larger for emphasis */
+  color: #ffffff;
+  font-weight: 600; /* Added boldness */
+}
+
+/* Category heading styling */
+.category-heading {
+  font-size: 1.4rem; /* Increased size */
+  color: #ffffff;
+  margin: 20px 0 10px;
+  padding-left: 12px;
+  border-left: 4px solid #ff4757; /* Accent border for category headings */
+  font-weight: bold;
+}
+
+/* Video row container for displaying video cards */
+.video-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px 0;
+  margin-top: 10px;
+  gap: 20px; /* Adds space between video cards */
+  scroll-behavior: smooth; /* Smooth scrolling when dragging */
+}
+
+/* Hides the scrollbar */
+.video-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual video card styling */
+.video-card {
+  position: relative;
+  width: 220px; /* Slightly wider for better visibility */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Video thumbnail image styling */
+.video-thumbnail {
+  width: 100%;
+  height: 320px; /* Slightly taller for better aspect ratio */
+  object-fit: cover;
+  background-color: #000000;
+  border-radius: 12px; /* More rounded corners */
+  transition: transform 450ms ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+/* Hover effect for video thumbnail */
+.video-thumbnail:hover {
+  transform: scale(1.08); /* Slight zoom effect on hover */
+}
+
+/* Video title below the thumbnail */
+.video-title {
+  text-align: center;
+  margin-top: 12px; /* Increased margin */
+  font-weight: bold;
+  font-size: 1.1rem; /* Slightly larger */
+  color: #ffffff; /* White text for better contrast */
+}
+
+/* Button group for PLAY and TRAILER buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Styling for PLAY and TRAILER buttons */
+.banner_button {
+  padding: 12px 20px; /* Slightly larger padding */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px; /* More rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner_button:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Specific style for the TRAILER button */
+.trailer-button {
+  position: absolute;
+  bottom: 30px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: linear-gradient(
+    to right,
+    #e50914 0%,
+    #b1060f 100%
+  ); /* Netflix-style gradient */
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden;
+  z-index: 2;
+}
+
+.video-card:hover .trailer-button {
+  opacity: 1;
+  visibility: visible;
+  bottom: 40px; /* Animated upward movement */
+}
+
+.trailer-button::before {
+  content: "▶";
+  font-size: 0.8em;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.trailer-button:hover {
+  background: linear-gradient(
+    to right,
+    #ff0a16 0%,
+    #c20710 100%
+  );
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.trailer-button:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Video Modal Styling */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.95); /* Darker overlay */
+  z-index: 1000;
+}
+
+/* Modal content box styling */
+.modal-content {
+  background-color: #161515;
+  padding: 20px;
+  border-radius: 12px; /* More rounded corners */
+  width: 80%; /* Slightly wider */
+  max-width: 900px; /* Increased max width */
+  position: relative;
+}
+
+/* Close button for the modal */
+.close-btn {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 28px; /* Slightly larger */
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff4757; /* Change color on hover */
+}
+
+/* Video player inside the modal */
+video {
+  width: 100%; /* Full width of modal */
+  height: auto;
+  border-radius: 8px;
+  max-height: 80vh; /* Ensure it fits within viewport */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-row {
+    gap: 10px;
+  }
+
+  .video-card {
+    width: 180px; /* Adjusted for smaller screens */
+  }
+
+  .video-thumbnail {
+    height: 260px; /* Adjusted height */
+  }
+
+  .modal-content {
+    width: 95%; /* Wider on mobile */
+    padding: 15px;
+  }
+
+  .banner_button {
+    padding: 10px 16px; /* Adjusted padding */
+    font-size: 12px;
+  }
+
+  .trailer-button {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    bottom: 20px;
+  }
+
+  .video-card:hover .trailer-button {
+    bottom: 30px;
+  }
+}

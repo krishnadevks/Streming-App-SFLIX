@@ -1,0 +1,105 @@
+/* History Page Container */
+.history {
+  padding: 30px 40px;
+  background: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Back Button Styling */
+.history .back-button {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+.history .back-button:hover {
+  color: #007afd; /* Accent on hover */
+}
+
+/* Page Title Styling */
+.history h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #000000;
+  letter-spacing: 1px;
+  /* Removed text-shadow for a clean look */
+}
+
+/* History List Styling */
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history ul li {
+  background: #f9f9f9; /* Light gray for separation */
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.history ul li:hover {
+  transform: translateY(-3px);
+  background: #f1f1f1;
+}
+
+.history ul li strong {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.history ul li p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+/* Action Buttons Styling */
+.history button {
+  padding: 10px 16px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.history button:hover {
+  background: #f0f0f0;
+  transform: scale(1.03);
+}
+
+/* Clear All Button */
+.history .clear-all-button {
+  background: #ffcccc;
+  color: #000000;
+  border: 1px solid #cc0000;
+  margin-bottom: 20px;
+}
+
+.history .clear-all-button:hover {
+  background: #ffb3b3;
+}
+
+/* Message Styling */
+.history .message {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+}

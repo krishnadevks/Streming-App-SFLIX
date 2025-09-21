@@ -1,0 +1,109 @@
+.user-table-container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+/* .add-user-h2 {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: rgb(213, 205, 205);
+} */
+
+.user-table th,
+.user-table td {
+  
+  border: 1px solid #aea6a6;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #3498db;
+  color: white;
+  text-transform: uppercase;
+}
+
+.user-table tr {
+  background-color: #ffffff;
+  color: rgb(11, 10, 10);
+}
+
+.user-table tr:hover {
+  background-color: #ddd;
+  
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.add-user-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(65, 62, 62);
+
+  gap: 10px;
+}
+.add-user-th {
+  color: rgb(65, 62, 62);
+  text-decoration: underline;
+  text-decoration-style: solid; /* You can change this to dotted, dashed, etc. */
+  text-decoration-thickness: 2px; /* Adjust the thickness of the underline */
+}
+
+.add-user-form label {
+  margin-right: 10px;
+  font-weight: bold;
+  
+}
+
+.add-user-form input,
+.add-user-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  
+}
+
+.add-user-button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add-user-button:hover {
+  background-color: #136aa4;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.add-user-h2{
+color: rgb(65, 62, 62);
+}
